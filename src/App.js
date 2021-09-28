@@ -1,5 +1,5 @@
+import React from "react";
 import { createGlobalStyle } from "styled-components";
-
 import Chamada from "./components/Chamada";
 
 const GlobalStyle = createGlobalStyle`
@@ -11,22 +11,23 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 `;
 
 function App() {
+
   return (
-    <>
+    <React.Fragment>
       <GlobalStyle />
-      <Chamada />
-    </>
+     <Chamada />
+   </React.Fragment>
   );
 }
 

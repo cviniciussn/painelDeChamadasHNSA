@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import Lista from "./Lista";
+import Lista2 from "./Lista2";
 
 const Container = styled.div`
-  height: fit-content;
-  width: 80vw;
+  height: 100%;
+  width: 90vw;
   background-color: aliceblue;
-  box-shadow: 5px 5px 10px black;
   margin-bottom: 20px;
   border-radius: 10px;
-  min-width: 1000px;
 
-  table{
+  table {
     margin-top: 25px;
     color: black;
   }
@@ -22,11 +20,14 @@ const Container = styled.div`
 
 export default function ChamadosContainer() {
   return (
-    <>
-    <Container>
-      <Lista></Lista>
-    </Container>
-    <p>Desenvolvido pelo Hospital Naval de Salvador. Todos os direitos reservados - 2021</p>
-    </>
+    <React.Fragment>
+      <Container>
+        <Lista2></Lista2>
+      </Container>
+      <p>
+        Desenvolvido pelo Hospital Naval de Salvador. Todos os direitos
+        reservados - 2021
+      </p>
+    </React.Fragment>
   );
 }

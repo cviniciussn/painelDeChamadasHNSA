@@ -7,14 +7,13 @@ import Relogio from "./Relogio";
 const Cabecalho = styled.div`
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
+  height: 180px;
   width: 100%;
   color: whitesmoke;
   justify-content: space-evenly;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
-
+  margin-left: 90px;
+  margin-right: 90px;
 
   img {
     height: 150px;
@@ -27,17 +26,19 @@ const Cabecalho = styled.div`
       font-size: xxx-large;
     }
   }
+
 `;
 
 export default function Header() {
   return (
     <Cabecalho>
       <img src={img} alt="logomarca" />
-      <div>
+      <div id='texto'>
         <h1>Hospital Naval de Salvador</h1>
-        <h2>Marinha do Brasil 🇧🇷</h2> 
+        <h2>Marinha do Brasil {/* <span> 🇧🇷 </span>  */} </h2>
       </div>
-      <Relogio></Relogio>
+      
+      <Relogio ></Relogio>
     </Cabecalho>
   );
 }
