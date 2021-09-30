@@ -1,5 +1,5 @@
 import React from "react";
-import soundFile from './notify.mp3'
+import soundFile from './notify.wav'
 
 const Sound = () => <audio src={soundFile} autoPlay />;
 

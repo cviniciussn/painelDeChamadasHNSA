@@ -6,6 +6,7 @@ import Relogio from "./Relogio";
 
 const Cabecalho = styled.div`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   height: 180px;
   width: 100%;
@@ -16,8 +17,8 @@ const Cabecalho = styled.div`
   margin-right: 90px;
 
   img {
-    height: 150px;
-    width: 120px;
+    height: 110px;
+    width: 90px;
   }
 
   div {
@@ -25,6 +26,10 @@ const Cabecalho = styled.div`
     h1 {
       font-size: xxx-large;
     }
+  }
+
+  #texto{
+    padding-left: 60px;
   }
 
 `;
@@ -35,7 +40,7 @@ export default function Header() {
       <img src={img} alt="logomarca" />
       <div id='texto'>
         <h1>Hospital Naval de Salvador</h1>
-        <h2>Marinha do Brasil {/* <span> 🇧🇷 </span>  */} </h2>
+        <h2>Marinha do Brasil <span> 🇧🇷 </span></h2>
       </div>
       
       <Relogio ></Relogio>

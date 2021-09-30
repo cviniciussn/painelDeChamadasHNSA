@@ -27,6 +27,7 @@ export default function ChamadosContainer() {
       <p>
         Desenvolvido pelo Hospital Naval de Salvador. Todos os direitos
         reservados - 2021
+        {/* Ex Mn Carlos Vinicius - frontEndDeveloper - (71)99125-2375 */}
       </p>
     </React.Fragment>
   );
