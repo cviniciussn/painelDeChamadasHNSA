@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const Clock = styled.div`
 
-font-size: 30px;
-width: 11rem;
+font-size: 35px;
+width: 12rem;
 background-color: #e05036;
 border-start-start-radius: 20px;
 border-end-end-radius: 20px;

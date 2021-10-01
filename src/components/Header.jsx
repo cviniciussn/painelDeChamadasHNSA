@@ -14,7 +14,7 @@ const Cabecalho = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-left: 90px;
-  margin-right: 90px;
+  margin-right: 40px;
 
   img {
     height: 110px;

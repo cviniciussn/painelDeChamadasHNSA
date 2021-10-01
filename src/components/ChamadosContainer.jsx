@@ -3,19 +3,16 @@ import styled from "styled-components";
 import Lista2 from "./Lista2";
 
 const Container = styled.div`
-  height: 100%;
-  width: 90vw;
+  height: 100vh;
+  width: 100vw;
   background-color: aliceblue;
-  margin-bottom: 20px;
   border-radius: 10px;
 
   table {
     margin-top: 25px;
     color: black;
   }
-  tr {
-    text-align: center;
-  }
+
 `;
 
 export default function ChamadosContainer() {

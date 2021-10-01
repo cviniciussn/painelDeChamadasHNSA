@@ -23,29 +23,23 @@ const blink = keyframes`
 const ListaChamados = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
 
   table{
-    width: 100%;
+    width: 90%;
   }
 
-  th {
-    height: 1.5em;
-  }
-
-  td {
-    height: 1.8em;
-
-  }
 
   #coluna-local{
-    width: 200px;
+    width: 300px;
   }
   
  
   tr {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 26px;
+    height: 65px;
+    text-align: center;
   }
   tr:nth-child(even) {
     background-color: #a9a9a9b0;
@@ -65,8 +59,8 @@ const UltimoNome = styled.div`
   justify-content: space-between;
 
   align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 100px;
+  padding-right: 100px;
   text-shadow: 2px 2px 2px black;
   border-radius: 10px;
 
@@ -79,7 +73,7 @@ const UltimoNome = styled.div`
 
   #paciente {
    > h1{
-      padding-right: 70px;
+      padding-right: 150px;
     }
     font-size: x-large;
     animation-name: ${blink};
@@ -91,9 +85,7 @@ const UltimoNome = styled.div`
     text-align: center;
     padding-left: 5px;
   }
-  #horario{
-    padding-left: 60px;
-  }
+
 `;
 
 export default class Lista2 extends React.Component {
@@ -106,7 +98,7 @@ export default class Lista2 extends React.Component {
   }
 
   getData() {
-    const response = fetch("http://10.12.114.202:5000/").then((res) =>
+    const response = fetch("http://10.12.114.202:5000").then((res) =>
       res.json()
     );
     return response;
