@@ -6,23 +6,47 @@ export default function handleData(listSource) {
 
   list.map((value) => {
     let getName = value[0].split(";")[0];
-    let getNameLab = value[0].split(":")[0];
+    let getKey = value[0].split(":")[0];
     let getLocal = value[0].split(";")[1].split(" ")[1];
     let getHorario = value[1].split(" ")[1].split(".")[0].split(":");
     let getNovoHorario = `${getHorario[0]}:${getHorario[1]}`;
     let fullName = getName;
     let id = value[1].split(" ")[1]
 
-    if (getName.length >= 5) {
-      getName = getName.split(" ");
-      getName = `${getName[0]}   ${getName[getName.length - 1]}`;
+
+
+    getName.includes("LAB") && handleLab() || getName.includes("MARC") && handleMarc() || handleAmb()
+
+
+    if(getName.includes("LAB_PREF" || "MARC_PREF")){
+      getKey = `PREFERENCIAL - ${getKey}`
     }
 
-    if(getName.includes("LAB_PREF")){
-      getNameLab = `PREFERENCIAL - ${getNameLab}`
+
+
+   function handleLab(){
+      return paciente.push({
+        nome: getKey,
+        nomeCompleto: getKey,
+        local: "Laboratório",
+        horario: getNovoHorario,
+        id: id
+      });
     }
 
-    if (getLocal !== "DO") {
+    function handleMarc(){
+      
+      return paciente.push({
+        nome: getName.split(":")[0],
+        nomeCompleto: getKey,
+        local: `SAME - Guichê: ${value[0].split(";")[1]}`,
+        horario: getNovoHorario,
+        id: id
+      });
+
+    }
+
+    function handleAmb(){
       return paciente.push({
         nome: getName,
         nomeCompleto: fullName,
@@ -30,15 +54,17 @@ export default function handleData(listSource) {
         horario: getNovoHorario,
         id: id
       });
-    } else {
-      return paciente.push({
-        nome: getNameLab,
-        nomeCompleto: getNameLab,
-        local: "Laboratório",
-        horario: getNovoHorario,
-        id: id
-      });
+
     }
+
+
+    if (getName.length >= 5) {
+      getName = getName.split(" ");
+      getName = `${getName[0]}   ${getName[getName.length - 1]}`;
+    }
+
+
   });
+  console.log(paciente)
   return paciente;
 }

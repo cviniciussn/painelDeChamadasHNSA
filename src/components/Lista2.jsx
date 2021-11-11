@@ -5,6 +5,8 @@ import handleData from "../js/source";
 import Sound from "../audio/Alert";
 import Loader from "./Loader";
 
+ import res from '../js/source16022021.json'
+
 const blink = keyframes`
 {
   0%,
@@ -97,25 +99,35 @@ export default class Lista2 extends React.Component {
     };
   }
 
-  getData() {
-    const response = fetch("http://10.12.114.202:5000").then((res) =>
-      res.json()
-    );
-    return response;
-  }
+  // getData() {
+  //   const response = fetch("http://10.12.114.202:5000").then((res) =>
+  //     res.json()
+  //   );
+  //   return response;
+  // }
 
   componentDidMount() {
     this.setState({ loading: "true" });
 
+    // setInterval(() => {
+    //   this.getData().then((res) => {
+    //     const dados = handleData(res);
+    //     this.setState({
+    //       loading: false,
+    //       paciente: dados,
+    //     });
+    //   });
+    // }, 5000);
+
+    // TESTE
     setInterval(() => {
-      this.getData().then((res) => {
-        const dados = handleData(res);
-        this.setState({
-          loading: false,
-          paciente: dados,
-        });
-      });
-    }, 5000);
+          const dados = handleData(res);
+          this.setState({
+            loading: false,
+            paciente: dados,
+          });
+ 
+      }, 5000);
   }
 
   render() {
